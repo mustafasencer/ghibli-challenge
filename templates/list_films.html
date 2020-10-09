@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Movies{% endblock %}
+
+{% block content %}
+    {% if exception is defined %}
+        <h1>Ghibli API Error! &#129327;</h1>
+    {% else %}
+        {% if films %}
+            <div class="movies-container">
+                {% for film in films %}
+                    <div class="movie-item">
+                        <div class="movie-title">
+                            <h2>{{ film.title }}</h2>
+                            <div class="movie-trivia">
+                                <div>
+                                    <span><b>Director: </b></span>
+                                    <p>{{ film.director }}</p>
+                                    <span><b>Producer: </b></span>
+                                    <p>{{ film.producer }}</p>
+                                </div>
+                                <div>
+                                    <span><b>Release Date: </b></span>
+                                    <p>{{ film.release_date }}</p>
+                                    <span><b>Score: </b></span>
+                                    <p>{{ film.rt_score }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-cast">
+                            <span><b>Cast: </b></span>
+                            {% if film.people %}
+                                <p>{{ film.people|join(", ") }}</p>
+                            {% else %}
+                                <span>No cast found &#128561;</span>
+                            {% endif %}
+                        </div>
+                        <div class="movie-description">
+                            <span><b>Description: </b></span>
+                            <p>{{ film.description }}</p>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h1>No Films Found! &#128566;</h1>
+        {% endif %}
+    {% endif %}
+{% endblock %}

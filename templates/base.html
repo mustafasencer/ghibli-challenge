@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/static/style.css"/>
+    <title>{% block title %}{% endblock %}</title>
+    {% block html_head %}{% endblock %}
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        GHIBLI STUDIO
+    </div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="footer">
+        {% block footer %}
+            &copy; Copyright 2020 by &nbsp;<a target="_blank" href="https://github.com/mustafasencer"><i>Mustafa Sencer Özcan</i></a>
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

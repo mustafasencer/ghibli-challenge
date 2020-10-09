@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Too Many Babe{% endblock %}
+{% block html_head %}
+    <link rel="stylesheet" type="text/css" href="/static/errors.css">
+{% endblock %}
+
+{% block content %}
+    <h1>Too Many Requests</h1>
+    <p>I only allow 30 requests per minute to this Web site per user. Try again soon.</p>
+{% endblock %}
