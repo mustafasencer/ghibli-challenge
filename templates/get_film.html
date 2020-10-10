@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Movie{% endblock %}
+{% block content %}
+    <div class="movie-item-detail">
+        <div class="movie-title">
+            <h2>
+                <a href="/movies/{{ film.id }}">{{ film.title }}</a>
+            </h2>
+            <div class="movie-trivia">
+                <div>
+                    <span><b>Director: </b></span>
+                    <p>{{ film.director }}</p>
+                    <span><b>Producer: </b></span>
+                    <p>{{ film.producer }}</p>
+                </div>
+                <div>
+                    <span><b>Release Date: </b></span>
+                    <p>{{ film.release_date }}</p>
+                    <span><b>Score: </b></span>
+                    <p>{{ film.rt_score }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="movie-description">
+            <span><b>Description: </b></span>
+            <p>{{ film.description }}</p>
+        </div>
+    </div>
+{% endblock %}

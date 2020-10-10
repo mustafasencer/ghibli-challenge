@@ -27,3 +27,10 @@ def list_movies():
                 film['people'].append(person['name'])
         result.append(film)
     return render_template('list_films.html', films=result)
+
+
+@bp.route('/movies/<mid>', methods=('GET',))
+def get_movie(mid):
+    ghibli_service = GhibliService()
+    film = ghibli_service.get_by_id('films', mid)
+    return render_template('get_film.html', film=film)

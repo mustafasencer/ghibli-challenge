@@ -7,6 +7,8 @@ Flask-Cors==3.0.9
 Flask-Limiter==1.4
 flask-redis==0.4.0
 idna==2.10
+importlib-metadata==2.0.0
+iniconfig==1.0.1
 itsdangerous==1.1.0
 Jinja2==2.11.2
 limits==1.5.1
@@ -23,3 +25,4 @@ requests==2.24.0
 six==1.15.0
 urllib3==1.25.10
 Werkzeug==1.0.1
+zipp==3.3.0

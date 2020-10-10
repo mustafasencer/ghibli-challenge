@@ -1,3 +1,6 @@
+import requests
+
+
 def test_ghibli_api(client):
-    response = client.get('/movies')
-    assert response.status == '200 OK'
+    response = requests.get(f'{client.application.config["GHIBLI_URL"]}/films').json()
+    assert isinstance(response, list)

@@ -7,26 +7,23 @@ a {
     text-decoration: none;
 }
 
-span {
-    margin: 5px;
-}
-
-p {
-    margin: 5px;
-}
-
-a[href^="//"]:after,
-a[href^="http://"]:after,
-a[href^="https://"]:after {
-    background: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png) center right no-repeat;
-    color: #555;
-    padding-right: 10px;
+a:hover {
+    color: transparent;
+    -webkit-text-stroke: 2px grey;
 }
 
 @keyframes slidebg {
     to {
         background-position: 20vw;
     }
+}
+
+span {
+    margin: 5px;
+}
+
+p {
+    margin: 5px;
 }
 
 button:hover {
@@ -82,15 +79,18 @@ button {
     background-color: #ffcc5c;
 }
 
-.content {
-    flex-direction: column;
-    font-size: 1.5em;
-}
-
 .header {
     display: flex;
     font-size: 2em;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer {
@@ -102,6 +102,8 @@ button {
     grid-gap: 5px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     background: white;
+    width: 100%;
+    height: 100%;
 }
 
 .movies-container > div {
@@ -121,6 +123,18 @@ button {
     align-content: center;
     text-align: center;
     background: #ff6f69;
+}
+
+.movie-item-detail {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: solid;
+    align-content: center;
+    text-align: center;
+    background: #ff6f69;
+    padding: 5px;
+    margin: 10px;
 }
 
 .movie-title {
@@ -159,5 +173,4 @@ button {
     justify-content: center;
     align-items: center;
     font-size: .8em;
-    border-top: solid .3em;
 }
