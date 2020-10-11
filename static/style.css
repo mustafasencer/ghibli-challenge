@@ -24,6 +24,7 @@ span {
 
 p {
     margin: 5px;
+    white-space: pre-line
 }
 
 button:hover {
