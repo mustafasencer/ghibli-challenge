@@ -27,3 +27,49 @@ be aware to install `redis` on your local machine.
 ```console
 pytest -v
 ```
+
+#### Project Structure
+```
+.
+├── Dockerfile
+├── README.md
+├── app
+│   ├── __init__.py
+│   ├── api.md
+│   ├── index.py
+│   └── movies.py
+├── app.py
+├── docker-compose.yml
+├── requirements.txt
+├── services
+│   ├── __init__.py
+│   └── ghibli.py
+├── static
+│   ├── errors.css
+│   └── style.css
+├── templates
+│   ├── 404.html
+│   ├── 429.html
+│   ├── 500.html
+│   ├── base.html
+│   ├── get_film.html
+│   ├── index.html
+│   └── list_films.html
+├── test-local.sh
+├── tests
+│   ├── __init__.py
+│   ├── api
+│   │   ├── __init__.py
+│   │   ├── test_index.py
+│   │   └── test_movies.py
+│   ├── conftest.py
+│   ├── services
+│   │   ├── __init__.py
+│   │   └── test_ghibli_api.py
+│   └── tests-start.sh
+└── utils
+    ├── __init__.py
+    ├── cache.py
+    └── error.py
+
+```

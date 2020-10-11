@@ -9,12 +9,12 @@ a {
 
 a:hover {
     color: transparent;
-    -webkit-text-stroke: 2px grey;
+    -webkit-text-stroke: 1px grey;
 }
 
 @keyframes slidebg {
     to {
-        background-position: 20vw;
+        background-position: 29vw;
     }
 }
 
@@ -51,7 +51,7 @@ button {
     display: grid;
     grid-gap: 3px;
     grid-template-columns: 1fr;
-    grid-template-rows: 40px auto 40px;
+    grid-template-rows: 50px auto 40px;
     text-align: center;
 }
 
@@ -75,14 +75,18 @@ button {
     background-color: #ff6f69;
 }
 
-.container > div:nth-child(4n) {
-    background-color: #ffcc5c;
-}
-
 .header {
     display: flex;
     font-size: 2em;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+}
+
+.index-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .content {
@@ -139,6 +143,7 @@ button {
 
 .movie-title {
     color: #555;
+    width: 100%;
 }
 
 .movie-title > h2 {
@@ -165,6 +170,8 @@ button {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    border-top: solid .2em;
 }
 
 .movie-description {
@@ -173,4 +180,5 @@ button {
     justify-content: center;
     align-items: center;
     font-size: .8em;
+    border-top: solid .2em;
 }

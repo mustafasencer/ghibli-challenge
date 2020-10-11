@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-    <h1><a target="_blank"  href="https://ghibliapi.herokuapp.com/#tag/People">Ghibli</a>
-    </h1>
+
     <button>
         <a href="/movies">Movies</a>
     </button>
+    <div class="index-header">
+        <span>You can check the Ghibli API from </span>
+        <a target="_blank" href="https://ghibliapi.herokuapp.com/#tag/People"><i>here</i></a>
+    </div>
 {% endblock %}
