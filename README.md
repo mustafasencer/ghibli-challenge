@@ -12,7 +12,7 @@ docker-compose up -d
 API provides movie listing logic along with the index page content.
 * [Index](/app/api.md): `GET /`
 * [Get Movies](/app/api.md) : `GET /movies`
-* [Get Movie](/app/api.md) : `GET /movie/:mid`
+* [Get Movie](/app/api.md) : `GET /movies/:mid`
 
 ## Cache
 `redis` is utilized as the in-memory database.Cache aside strategy is applied in order to cache the movies.
