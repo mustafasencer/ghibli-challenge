@@ -43,7 +43,7 @@ pytest -v
 ├── requirements.txt
 ├── services
 │   ├── __init__.py
-│   └── ghibli.py
+│   └── ghibli_service.py
 ├── static
 │   ├── errors.css
 │   └── style.css
@@ -71,5 +71,4 @@ pytest -v
     ├── __init__.py
     ├── cache.py
     └── error.py
-
 ```
