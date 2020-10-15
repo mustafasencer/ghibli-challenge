@@ -1,6 +1,5 @@
 import requests
-from flask import current_app
-from requests import RequestException, HTTPError
+from requests import RequestException
 import urllib
 
 from utils.error import AppError
@@ -8,11 +7,16 @@ from utils.error import AppError
 
 class GhibliService:
 
-    def __init__(self):
-        self.base_url = current_app.config['GHIBLI_URL']
+    def init_app(self, app):
+        self.base_url = app.config.get('GHIBLI_URL')
+        app.extensions[self.config_prefix.lower()] = self
+
+    def __init__(self, config_prefix='GHIBLI'):
+        self.base_url = None
         self.headers = {
             'Content-Type': 'application/json'
         }
+        self.config_prefix = config_prefix
 
     def _fetch(self, endpoint):
         try:

@@ -6,6 +6,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_redis import FlaskRedis
 
+from services.ghibli_service import GhibliService
 from utils.error import AppError
 
 
@@ -31,6 +32,7 @@ def init_extensions(app):
     CORS(app)
     limiter.init_app(app)
     redis_client.init_app(app)
+    ghibli_service.init_app(app)
 
 
 def register_blueprints(app):
@@ -42,6 +44,7 @@ def register_blueprints(app):
 
 limiter = Limiter(key_func=get_remote_address, default_limits=["30 per minute"])
 redis_client = FlaskRedis()
+ghibli_service = GhibliService()
 
 
 def create_app():

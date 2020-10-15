@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-from services.ghibli import GhibliService
+from app import ghibli_service
 from utils.cache import cache
 
 bp = Blueprint('movies', __name__)
@@ -9,7 +9,6 @@ bp = Blueprint('movies', __name__)
 @bp.route('/movies', methods=('GET',))
 @cache(ttl=60)
 def list_movies():
-    ghibli_service = GhibliService()
     films = ghibli_service.list('films', {})
     people = ghibli_service.list('people', {'fields': 'id,name,films'})
     people_with_film_ids = [
@@ -31,6 +30,5 @@ def list_movies():
 
 @bp.route('/movies/<mid>', methods=('GET',))
 def get_movie(mid):
-    ghibli_service = GhibliService()
     film = ghibli_service.get_by_id('films', mid)
     return render_template('get_film.html', film=film)
