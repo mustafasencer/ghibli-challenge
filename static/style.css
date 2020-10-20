@@ -14,7 +14,7 @@ a:hover {
 
 @keyframes slidebg {
     to {
-        background-position: 29vw;
+        background-position: 70vw;
     }
 }
 
@@ -37,7 +37,7 @@ button:hover {
             #00AAC3,
             #732982
     );
-    animation: slidebg 2s linear infinite;
+    animation: slidebg 6s linear infinite;
 }
 
 button {
